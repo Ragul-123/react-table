@@ -36,24 +36,24 @@ class demo extends Component {
     }
        }
 
-   async componentDidMount() {
-            this.setState({ isLoading: true })
+//    async componentDidMount() {
+//             this.setState({ isLoading: true })
     
-            const response = await fetch("http://172.24.145.65/api/WO_ORDER_ACCOUNT_EXECS");
+//             const response = await fetch("/api/WO_ORDER_ACCOUNT_EXECS");
     
-            if (response.ok) {
-                const rowData = await response.json()
-                console.log(rowData)
-                this.setState({ rowData, isLoading: false })
-            } else {
-                this.setState({ isError: true, isLoading: false })
-            }
-        }
+//             if (response.ok) {
+//                 const rowData = await response.json()
+//                 console.log(rowData)
+//                 this.setState({ rowData, isLoading: false })
+//             } else {
+//                 this.setState({ isError: true, isLoading: false })
+//             }
+//         }
   
   render(){
       const {defaultColumnWidths,rowData} = this.state;
   return (
-      <Grid rows={rowData} columns={columns} >
+      <Grid rows={customData} columns={columns} >
         <PagingState
           defaultCurrentPage={0}
           pageSize={8}
